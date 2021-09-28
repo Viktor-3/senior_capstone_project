@@ -1,0 +1,62 @@
+<!--pages/cart/index.wxml-->
+<view class="receive_address">
+  <view wx:if="{{!address.userName}}">
+    <button type="primary" plain="true" bindtap="handleGetAddress">Add an Address</button>
+  </view>
+  <view wx:else>
+    <view id="user_info0">
+      <text id="username">{{address.userName}}: </text>
+      <text id="user_tel">{{address.telNumber}}</text>
+    </view>
+    <view id="user_info1">
+      <text>{{address.all}}</text>
+    </view>
+  </view>
+</view>
+
+<view>
+  <block wx:if="{{cart.length === 0}}">
+    <view id="empty">Empty Cart!</view>
+  </block>
+  <block wx:else>
+    <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+      <view class="cart_checkbox">
+        <checkbox-group bindchange="changeItem" data-id="{{item.goods_id}}">
+          <checkbox checked="{{item.checked}}"></checkbox>
+        </checkbox-group>
+      </view>
+      <navigator id="item_image">
+        <image mode="widthFix" src="{{item.goods_small_logo}}"></image>
+      </navigator>
+      <view id="item_info">
+        <text id="item_name">{{item.goods_name}}</text>
+        <view id="item_price_container">
+          <text id="item_price">${{item.goods_price}}</text>
+          <view class="item_number">
+            <text bindtap="changeItemNumber" data-id="{{item.goods_id}}" data-operation="{{-1}}" class="number_edit">-</text>
+            <text id="goods_number">{{item.num}}</text>
+            <text bindtap="changeItemNumber" data-id="{{item.goods_id}}" data-operation="{{1}}" class="number_edit">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view id="footer">
+  <view class="all_checked">
+    <checkbox-group bindchange="onClickAllChecked">
+      <checkbox checked="{{allCheck}}">Select All</checkbox>
+    </checkbox-group>
+  </view>
+
+  <view id="total_price_container">
+    <view id="total_price">
+      <text id="price_text">Total cost: ${{total_price}}</text>
+    </view>
+  </view>
+
+  <navigator open-type="navigate">
+    <view id="checkout">Checkout: {{total_number}}</view>
+  </navigator>
+</view>

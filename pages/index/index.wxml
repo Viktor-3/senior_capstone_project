@@ -1,0 +1,39 @@
+<view class="main_index">
+
+  <!-- slideshow begins -->
+  <view class="swiper_index">
+  <!--
+    swiper contains default height(150px) and width(100%)
+    image tag contains default height(240px) and width(320px)
+    make height auto and width 100%
+    widthFix: change the ratio of the width and height of the image tag
+  -->
+    <swiper autoplay="true" indicator-dots="true" circular interval="3000">
+      <swiper-item wx:for="{{swiper_list}}" wx:key="goods_id">
+        <image mode="widthFix" src="{{item.image_src}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- slideshow ends -->
+
+
+
+  <!-- floor begins -->
+  <view class="floor_index">
+    <view class="floor_group" wx:for="{{floor_list}}" 
+    wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+      <!-- title of floors -->
+      <view class="floor_title">
+        <image mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
+      </view>
+      <!-- contents of floors -->
+      <view class="floor_list">
+        <navigator wx:for="{{item1.product_list}}" 
+        wx:for-item="item2" wx:for-index="index2" wx:key="name">
+          <image mode="{{index2 === 0 ? 'widthFix' : 'scaleToFill'}}" src="{{item2.image_src}}"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- floor ends -->
+</view>

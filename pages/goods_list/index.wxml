@@ -1,0 +1,16 @@
+<!--pages/goods_list/index.wxml-->
+<!-- monitor default event -->
+<block>
+    <navigator class="goods_item" wx:for="{{goods_lists}}" 
+    wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+      <!-- left image container-->
+      <view class="image_container">
+        <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F16%2F08%2F26%2F1957c0226aaca58.jpg%21%2Ffwfh%2F804x1005%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue&refer=http%3A%2F%2Fku.90sjimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620413469&t=d57faa3d7d40fdc352c65b5e76e1255b'}}"></image>
+      </view>
+      <!-- right info container-->
+      <view class="info_container">
+        <view class="goods_name">{{item.goods_name}}</view>
+        <view class="goods_price">${{item.goods_price}}</view>
+      </view>
+    </navigator>
+</block>

@@ -1,0 +1,30 @@
+<!--pages/category/index.wxml-->
+<view class="categories">
+  <view class="category_container">
+    <!-- menu -->
+    <scroll-view scroll-y="true" class="menu_list">
+      <view class="menu_items {{index === selected_menu ? 'active' : ''}}" 
+      wx:for="{{menu}}" wx:key="*this" bindtap="handleItemTap" data-index="{{index}}">
+        {{item}}
+      </view>
+    </scroll-view>
+    <!-- shopping content -->
+    <scroll-view scroll-y="true" class="content_all" scroll-top="{{scrollTop}}">
+      <view class="content_group" wx:for="{{content}}" wx:for-index="index1" wx:for-item="item1" wx:key="cat_id">
+        <view class="content_title">
+          <text class="delimeter"></text>
+          <text class="title">{{item1.cat_name}}</text>
+          <text class="delimeter"></text>
+        </view>
+        <view class="content_list">
+          <navigator wx:for="{{item1.children}}" wx:for-index="index2" 
+          wx:for-item="item2" wx:key="cat_id" 
+          url="/pages/goods_list/index?cid={{item2.cat_id}}">
+            <image mode="widthFix" src="{{item2.cat_icon}}"></image>
+            <view class="content_name">{{item2.cat_name}}</view>
+          </navigator> 
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

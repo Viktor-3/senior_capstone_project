@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "Goods List",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

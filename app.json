@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/category/index", 
+    "pages/goods_list/index",
+    "pages/goods_detail/index", 
+    "pages/cart/index",
+    "pages/user/index",
+    "pages/auth/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4169E1",
+    "navigationBarTitleText": "David's Shop",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff0000",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home",
+        "iconPath": "icons/home0.png",
+        "selectedIconPath": "icons/home1.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "Category",
+        "iconPath": "icons/category0.png",
+        "selectedIconPath": "icons/category1.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "Cart",
+        "iconPath": "icons/cart0.png",
+        "selectedIconPath": "icons/cart1.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "User",
+        "iconPath": "icons/my0.png",
+        "selectedIconPath": "icons/my1.png"
+      }
+    ]
+  },
+  
+    
+  "sitemapLocation": "sitemap.json"
+}

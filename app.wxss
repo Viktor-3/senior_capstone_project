@@ -1,0 +1,30 @@
+@import "./styles/iconfont.wxss";
+
+/* WeChat mini-program does not support "*" */
+page, view, text
+{
+  padding: 0;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/*
+  Theme colors must be obtained by variables
+  1 variables exist in "less" 
+  2 CSS support variables as well
+*/
+page 
+{
+  /* Define theme color */
+  --themeColor: DodgerBlue; 
+  /* 
+    Define uniform theme color
+    1px = 2 rpx
+  */
+  font-size: 28rpx;
+}
+
+image
+{
+  widows: 100%;
+}

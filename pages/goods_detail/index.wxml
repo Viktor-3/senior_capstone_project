@@ -1,0 +1,46 @@
+<!--pages/goods_detail/index.wxml-->
+<view class="swiper">
+  <swiper indicator-dots="true" circular="true" autoplay="true" interval="1000">
+    <swiper-item wx:for="{{goods_object.pics}}" wx:key="pics_id" 
+    data-url="{{item.pics_mid}}">
+      <image mode="widthFix" src="{{item.pics_mid}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="price">${{goods_object.goods_price}}</view>
+<view class="row">
+  <view class="name">{{goods_object.goods_name}}</view>
+</view>
+
+<view class="info">
+  <view class="info_title">Graphic Detail</view>
+  <view class="info_content">
+    <rich-text nodes="{{goods_object.goods_introduce}}"></rich-text>
+  </view>
+</view>
+
+<view class="bot">
+  <view class="tool">
+    <view class="iconfont icon-kefu"></view>
+    <view>Contact Us</view>
+    <button open-type="contact"></button>
+  </view>
+  <view class="tool">
+    <view class="iconfont icon-fenxiang"></view>
+    <view>Share</view>
+    <button open-type="share"></button>
+  </view>
+  <navigator class="tool" url="/pages/cart/index" open-type="switchTab">  
+    <view class="iconfont icon-qicheqianlian-"></view>
+    <view>Cart</view>
+  </navigator>
+  <view class="tool cart" bindtap="handleAddToCart">
+    <view class="iconfont icon-jiarugouwuche"></view>
+    <view>Add To Cart</view>
+  </view>
+  <view class="tool buy">
+    <view class="iconfont icon-iconset0294"></view>
+    <view>Buy</view>
+  </view>
+</view>
